@@ -9,6 +9,11 @@
  * @Copyright (c) 2024 by Aliceee, All Rights Reserved.
  */
 //-------------------------------------------------------------
+
+//SDA是7脚,SCL是6脚
+
+//-------------------------------------------------------------
+
 #include "stdio.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
