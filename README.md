@@ -10,13 +10,13 @@
 -->
 
 ---
-#OLED
+## OLED
 >用的是ssd1306,电源和地你自己接就行
 ---
-#PMU
+## PMU
 >用的是AXP2101,不知道是什么自行百度,不需要了解
 ---
-#Used_PIN
+## Used_PIN
 >不过你光软件层应该用不到
 
 |OLED_SDA|OLED_SCL|PMU_INput|
