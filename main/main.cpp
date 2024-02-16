@@ -20,6 +20,7 @@
 #include "freertos/queue.h"
 #include "freertos/portmacro.h" //portTICK_PERIOD_MS
 #include "freertos/semphr.h"
+#include "nvs_flash.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include "sdkconfig.h"
@@ -39,6 +40,7 @@ void Init_Task(void *arg)
 {
     printf("Init_Start\n");
     if(Have_AXP2101) AXP2101_Init();//你没有PMU就把去config里把变量搞成flase就行
+    ESP_ERROR_CHECK(nvs_flash_init());
     oled_init();
     printf("Init_End\n");
     vTaskDelete(Init_Task_h);

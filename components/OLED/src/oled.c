@@ -11,9 +11,7 @@
 
 #include "oled.h"
 
-
 u8g2_t u8g2;
-
 
 void oled_init()
 {
@@ -22,15 +20,19 @@ void oled_init()
 
 void oled_test()
 {
-    for (int i = 0; i < 84; i++)
+    for (int i = 0; i < 144+128; i++)
     {
-    u8g2_ClearBuffer(&u8g2);
-    //u8g2_SendBuffer(&u8g2); 
-    u8g2_SetFont(&u8g2, u8g2_font_10x20_me); // 设置英文字体
-    u8g2_DrawStr(&u8g2, 1, i, "hello world");
-    u8g2_SendBuffer(&u8g2); // 一定要发送buffer
-    vTaskDelay(5 / portTICK_PERIOD_MS); // 延时5ms
+        
+        draw_logo(i-144,10);
+        vTaskDelay(5 / portTICK_PERIOD_MS); // 延时5ms
     }
-    
-    
 }
+
+void draw_logo(u8g2_uint_t x,u8g2_uint_t y)
+{
+    u8g2_ClearBuffer(&u8g2);
+    u8g2_DrawXBMP(&u8g2,x,y,144,44,logo);
+    u8g2_SendBuffer(&u8g2); // 一定要发送buffer
+}
+
+

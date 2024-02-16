@@ -39,10 +39,10 @@ i2c_config_t i2c_config = {
 
 static void _oled_i2c_init(void)
 {
-	ESP_LOGE(TAG, "u8g2 init start");
+	ESP_LOGI(TAG, "u8g2 init start");
 	i2c_param_config(I2C_NUM_1, &i2c_config);
 	i2c_driver_install(I2C_NUM_1, I2C_MODE_MASTER, 0, 0, 0);
-	ESP_LOGE(TAG, "u8g2 init end");
+	ESP_LOGI(TAG, "u8g2 init end");
 }
 
 void esp32_i2c_write(uint8_t addr, uint32_t idx, uint8_t *data)
